@@ -1,0 +1,1117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sonny's Speech Studio — 1-on-1 Online Public Speaking Coaching</title>
+<meta name="description" content="1-on-1 online public speaking coaching for working professionals. Structured, practical sessions over Zoom. Book a free consultation." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  /* ---------- Tokens ---------- */
+  :root{
+    --navy:#0a3e5c;
+    --navy-deep:#072e45;
+    --gold:#f6b43e;
+    --gold-deep:#e89f1e;
+    --gold-soft:#fbd58a;
+    --white:#ffffff;
+    --cream:#fdfaf3;
+    --cream-warm:#f7efde;
+    --text:#1a2b3a;
+    --muted:#5a6c7d;
+    --border:#e8ecef;
+    --border-warm:#ecdfc3;
+    --shadow-sm:0 1px 2px rgba(10,62,92,.05), 0 4px 14px rgba(10,62,92,.05);
+    --shadow-md:0 6px 18px rgba(10,62,92,.08), 0 18px 50px rgba(10,62,92,.07);
+    --shadow-lg:0 30px 70px rgba(10,62,92,.18);
+    --radius:16px;
+    --radius-lg:22px;
+    --container:1200px;
+    --section-py:120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;font-family:"Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color:var(--text);background:var(--white);
+    font-size:17px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 32px}
+  section{padding:var(--section-py) 0}
+  .bg-cream{background:var(--cream)}
+  .bg-navy{background:var(--navy);color:#fff}
+
+  h1,h2,h3,h4{font-weight:700;color:var(--navy);letter-spacing:-.025em;line-height:1.08;margin:0}
+  h1{font-size:clamp(38px, 5.6vw, 68px);letter-spacing:-.03em;font-weight:800}
+  h2{font-size:clamp(34px, 4.4vw, 54px);font-weight:700}
+  h3{font-size:21px;letter-spacing:-.012em;font-weight:700}
+  p{margin:0}
+  .lede{font-size:clamp(17px,1.35vw,20px);color:var(--muted);line-height:1.65}
+
+  /* ---------- Eyebrow with dot ---------- */
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:12px;font-weight:700;color:var(--navy);
+    letter-spacing:.22em;text-transform:uppercase;
+  }
+  .eyebrow::before{
+    content:"";width:8px;height:8px;background:var(--gold);border-radius:2px;
+  }
+  .eyebrow.on-navy{color:#fff}
+  .eyebrow.on-navy::before{background:var(--gold)}
+
+  /* ---------- Hand-drawn underline accent ---------- */
+  .swoosh{position:relative;display:inline-block;white-space:nowrap}
+  .swoosh::after{
+    content:"";position:absolute;left:-2%;right:-2%;bottom:-10px;height:10px;
+    background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'><path d='M3 8 C 40 2 80 11 120 5 C 150 1 180 7 197 4' stroke='%23f6b43e' stroke-width='4' fill='none' stroke-linecap='round'/></svg>") no-repeat center/100% 100%;
+    pointer-events:none;
+  }
+
+  /* ---------- Buttons (Marie Forleo pill) ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    height:58px;padding:0 32px;border-radius:999px;
+    font-weight:700;font-size:15.5px;letter-spacing:.01em;
+    transition:transform .2s ease, background-color .2s ease, color .2s ease, box-shadow .2s ease;
+    white-space:nowrap;
+  }
+  .btn-gold{background:var(--gold);color:var(--navy);box-shadow:0 10px 24px rgba(246,180,62,.32)}
+  .btn-gold:hover{background:var(--gold-deep);transform:translateY(-2px) scale(1.01);box-shadow:0 14px 30px rgba(246,180,62,.40)}
+  .btn-sm{height:46px;padding:0 22px;font-size:14px}
+  .btn-ghost-light{
+    background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4);
+  }
+  .btn-ghost-light:hover{background:#fff;color:var(--navy);border-color:#fff}
+  .btn .arrow{width:18px;height:18px}
+
+  /* ---------- Header ---------- */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.88);
+    backdrop-filter:saturate(160%) blur(10px);
+    -webkit-backdrop-filter:saturate(160%) blur(10px);
+    border-bottom:1px solid transparent;
+    transition:box-shadow .2s ease, border-color .2s ease, background-color .2s ease;
+  }
+  header.site.scrolled{
+    background:rgba(255,255,255,.96);
+    box-shadow:0 1px 0 rgba(10,62,92,.06), 0 12px 24px -16px rgba(10,62,92,.18);
+    border-bottom-color:var(--border);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:88px}
+  .nav .logo img{height:52px;width:auto}
+  .nav-links{display:flex;align-items:center;gap:38px}
+  .nav-links a{
+    color:var(--navy);font-weight:600;font-size:15px;position:relative;padding:6px 2px;
+  }
+  .nav-links a::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--gold);
+    transform:scaleX(0);transform-origin:left;transition:transform .25s ease;
+  }
+  .nav-links a:hover::after, .nav-links a.active::after{transform:scaleX(1)}
+  .nav-cta{display:flex;align-items:center;gap:18px}
+  .nav-burger{display:none;width:46px;height:46px;align-items:center;justify-content:center;border-radius:999px;border:1px solid var(--border);background:#fff}
+  .nav-burger svg{width:22px;height:22px;stroke:var(--navy)}
+
+  .mobile-menu{position:fixed;inset:0;background:rgba(255,255,255,.99);z-index:60;display:none;flex-direction:column;padding:24px 28px}
+  .mobile-menu.open{display:flex}
+  .mobile-menu .top{display:flex;justify-content:space-between;align-items:center;height:60px}
+  .mobile-menu nav{display:flex;flex-direction:column;gap:8px;margin-top:24px}
+  .mobile-menu nav a{font-size:24px;font-weight:600;color:var(--navy);padding:18px 4px;border-bottom:1px solid var(--border)}
+  .mobile-menu .btn{margin-top:24px;width:100%}
+
+  /* ============== 1 — HERO (photo-as-feature, content overlaid) ============== */
+  .hero{
+    position:relative;padding:48px 0 96px;
+  }
+  .hero-stage{
+    position:relative;
+    border-radius:28px;
+    overflow:hidden;
+    min-height:640px;
+    background:linear-gradient(135deg, #f7efde 0%, #fdfaf3 60%);
+    isolation:isolate;
+  }
+  .hero-photo{
+    position:absolute;inset:0;
+    background-image:url('assets/sonny-tux.jpg');
+    background-size:cover;
+    background-position:right 28% center;
+    z-index:0;
+  }
+  .hero-stage::before{
+    content:"";position:absolute;inset:0;z-index:1;
+    background:linear-gradient(95deg, rgba(253,250,243,.97) 0%, rgba(253,250,243,.9) 38%, rgba(253,250,243,.45) 56%, rgba(253,250,243,0) 72%);
+  }
+  .hero-stage::after{
+    content:"";position:absolute;left:-160px;top:-160px;width:520px;height:520px;
+    background:radial-gradient(closest-side, rgba(246,180,62,.22), rgba(246,180,62,0) 70%);
+    border-radius:50%;z-index:1;pointer-events:none;
+  }
+  .hero-content{
+    position:relative;z-index:2;
+    display:grid;grid-template-columns:1.1fr .9fr;gap:48px;
+    padding:88px 72px;align-items:center;min-height:640px;
+  }
+  .hero-text{display:flex;flex-direction:column;gap:24px;max-width:580px}
+  .hero h1{margin-top:6px}
+  .hero .sub{font-size:clamp(17px,1.35vw,20px);color:var(--text);max-width:540px;line-height:1.55}
+  .trust-line{
+    display:flex;flex-wrap:wrap;align-items:center;gap:12px;
+    color:var(--navy);font-size:13.5px;font-weight:600;
+    padding-top:6px;
+  }
+  .trust-line .dot{width:5px;height:5px;border-radius:50%;background:var(--gold)}
+  .hero-cta{display:flex;flex-direction:column;gap:12px;align-items:flex-start;margin-top:8px}
+  .reassure{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:10px;font-weight:500}
+  .reassure .dot{width:4px;height:4px;border-radius:50%;background:var(--gold)}
+
+  /* Floating testimonial card */
+  .float-card{
+    position:absolute;z-index:3;
+    right:48px;bottom:48px;
+    background:#fff;border-radius:18px;
+    padding:22px 24px;width:320px;
+    box-shadow:var(--shadow-lg);
+    border:1px solid var(--border-warm);
+  }
+  .float-card .qmark{
+    width:34px;height:34px;border-radius:8px;
+    background:rgba(246,180,62,.18);color:var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:14px;
+  }
+  .float-card blockquote{
+    margin:0;font-size:15px;line-height:1.55;color:var(--text);font-weight:500;
+    font-style:italic;
+  }
+  .float-card .who{
+    margin-top:14px;padding-top:12px;border-top:1px solid var(--border);
+    display:flex;align-items:center;justify-content:space-between;
+    font-size:13px;
+  }
+  .float-card .who .name{font-weight:700;color:var(--navy)}
+  .float-card .who .city{color:var(--muted)}
+
+  /* ============== 2 — Problem (cream, gold left-stripe cards) ============== */
+  .section-head{display:flex;flex-direction:column;align-items:center;gap:14px;max-width:780px;margin:0 auto 64px;text-align:center}
+  .section-head.left{align-items:flex-start;text-align:left;margin:0}
+  .section-head p{color:var(--muted);font-size:18px;line-height:1.6}
+
+  .problem-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:20px;
+    max-width:980px;margin:0 auto;
+  }
+  .problem-card{
+    position:relative;background:#fff;border:1px solid var(--border-warm);
+    border-radius:16px;padding:30px 32px 30px 36px;
+    display:flex;align-items:flex-start;gap:18px;
+    transition:transform .2s ease, box-shadow .2s ease;
+    overflow:hidden;
+  }
+  .problem-card::before{
+    content:"";position:absolute;left:0;top:18px;bottom:18px;width:4px;
+    background:var(--gold);border-radius:0 4px 4px 0;
+  }
+  .problem-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+  .problem-card .check{
+    flex-shrink:0;width:30px;height:30px;border-radius:50%;
+    background:rgba(246,180,62,.18);color:var(--gold-deep);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .problem-card p{font-size:16.5px;font-weight:500;color:var(--text);line-height:1.5}
+  .transition-line{
+    text-align:center;font-size:clamp(20px,1.7vw,24px);font-style:italic;color:var(--navy);
+    margin-top:56px;font-weight:500;max-width:680px;margin-left:auto;margin-right:auto;
+  }
+
+  /* ============== 3 — Audience fit (editorial 2-col) ============== */
+  .fit-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:88px;align-items:start}
+  .fit-text{padding-top:6px}
+  .fit-text h2{margin-top:14px}
+  .fit-text .lede{margin-top:22px;max-width:440px}
+  .fit-list{display:flex;flex-direction:column;gap:0;list-style:none;padding:0;margin:0}
+  .fit-item{
+    display:flex;align-items:flex-start;gap:18px;
+    padding:22px 0;border-bottom:1px solid var(--border);
+  }
+  .fit-item:first-child{padding-top:0}
+  .fit-item:last-child{border-bottom:none;padding-bottom:0}
+  .fit-item .check{
+    flex-shrink:0;width:30px;height:30px;border-radius:50%;
+    background:var(--gold);color:var(--navy);
+    display:flex;align-items:center;justify-content:center;font-weight:800;
+  }
+  .fit-item p{font-size:18px;font-weight:500;color:var(--text);line-height:1.5}
+
+  /* ============== 4 — Commitment shift (navy 3-up feature row) ============== */
+  .commit{position:relative;overflow:hidden}
+  .commit::before{
+    content:"";position:absolute;left:-180px;bottom:-180px;width:520px;height:520px;
+    border-radius:50%;
+    background:radial-gradient(closest-side, rgba(246,180,62,.18), rgba(246,180,62,0) 70%);
+    pointer-events:none;
+  }
+  .commit::after{
+    content:"";position:absolute;right:-220px;top:-220px;width:560px;height:560px;
+    border-radius:50%;
+    background:radial-gradient(closest-side, rgba(246,180,62,.10), rgba(246,180,62,0) 70%);
+    pointer-events:none;
+  }
+  .commit .inner{position:relative;z-index:1}
+  .commit h2{color:#fff}
+  .commit-features{
+    margin-top:64px;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:48px;
+  }
+  .commit-feat{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+  .commit-feat .ic{
+    width:54px;height:54px;border-radius:14px;
+    background:rgba(246,180,62,.14);
+    border:1px solid rgba(246,180,62,.35);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .commit-feat h3{color:#fff;font-size:21px;line-height:1.3}
+  .commit-feat p{color:rgba(255,255,255,.72);font-size:15px;line-height:1.55}
+
+  /* ============== 5 / 9 — Card grid (services / differentiation) ============== */
+  .icon-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;
+  }
+  .feature-card{
+    background:#fff;border:1px solid var(--border-warm);border-radius:18px;
+    padding:36px 32px;
+    display:flex;flex-direction:column;gap:18px;height:100%;
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .feature-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--gold-soft)}
+  .feature-card .ic{
+    width:58px;height:58px;border-radius:14px;
+    background:var(--cream-warm);border:1px solid var(--border-warm);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .feature-card h3{font-size:22px}
+  .feature-card p{color:var(--muted);font-size:16px;line-height:1.6}
+
+  /* ============== 6 — How it works (refined numbered steps) ============== */
+  .steps-wrap{
+    display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:center;
+  }
+  .steps-photo{
+    position:relative;border-radius:22px;overflow:hidden;
+    aspect-ratio:4/5;box-shadow:var(--shadow-lg);
+  }
+  .steps-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+  .steps-photo .corner{
+    position:absolute;width:120px;height:120px;border:2px solid var(--gold);
+    bottom:-14px;left:-14px;border-radius:18px;z-index:-1;
+  }
+  .steps-list{display:flex;flex-direction:column;gap:8px}
+  .step-row{
+    padding:30px 0;border-top:1px solid var(--border-warm);
+    display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:start;
+  }
+  .step-row:first-child{border-top:none;padding-top:0}
+  .step-row:last-child{padding-bottom:0}
+  .step-num{
+    color:var(--gold-deep);font-weight:800;font-size:15px;
+    letter-spacing:.18em;font-feature-settings:"tnum";
+    padding-top:6px;
+  }
+  .step-num span{
+    display:inline-block;border-bottom:2px solid var(--gold);padding-bottom:6px;
+  }
+  .step-body h3{font-size:24px;margin-bottom:8px}
+  .step-body p{color:var(--muted);font-size:16.5px;line-height:1.65;max-width:520px}
+
+  /* ============== 7 — Testimonials (editorial pull-quotes) ============== */
+  .testimonial-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;
+  }
+  .t-card{
+    background:var(--cream);border:1px solid var(--border-warm);border-radius:20px;
+    padding:38px 34px;display:flex;flex-direction:column;gap:18px;height:100%;
+    transition:transform .2s ease, box-shadow .2s ease;
+    position:relative;
+  }
+  .t-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+  .t-card .quote-mark{
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:72px;line-height:.6;color:var(--gold);
+    margin-top:6px;height:36px;
+  }
+  .t-card blockquote{
+    margin:0;font-size:18px;line-height:1.55;color:var(--text);font-weight:500;flex:1;
+    letter-spacing:-.005em;
+  }
+  .t-attrib{
+    margin-top:8px;padding-top:18px;border-top:1px solid var(--border-warm);
+  }
+  .t-attrib .name{font-weight:700;color:var(--navy);font-size:15px}
+  .t-attrib .city{color:var(--muted);font-size:13px;margin-top:2px}
+  .placeholder{color:var(--muted);font-style:italic}
+
+  /* ============== 8 — "Hi, I'm Sonny" (Marie Forleo treatment) ============== */
+  .meet{background:var(--cream-warm);position:relative;overflow:hidden}
+  .meet::before{
+    content:"";position:absolute;right:-200px;top:-200px;width:520px;height:520px;border-radius:50%;
+    background:radial-gradient(closest-side, rgba(246,180,62,.15), rgba(246,180,62,0) 70%);
+    pointer-events:none;
+  }
+  .meet-grid{
+    position:relative;z-index:1;
+    display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:center;
+  }
+  .meet-text{display:flex;flex-direction:column;gap:24px;max-width:560px}
+  .meet-name{
+    font-size:clamp(56px, 9vw, 110px);
+    font-weight:800;
+    color:var(--navy);
+    letter-spacing:-.045em;
+    line-height:.92;
+    margin:18px 0 8px;
+  }
+  .meet-text p{color:var(--text);font-size:17px;line-height:1.7}
+  .meet-text p.first{font-size:18px}
+  .cred-strip{
+    display:flex;flex-wrap:wrap;align-items:center;gap:14px;
+    color:var(--navy);font-size:13.5px;font-weight:600;
+    margin-top:14px;padding-top:24px;border-top:1px solid var(--border-warm);
+    letter-spacing:.01em;
+  }
+  .cred-strip .dot{width:5px;height:5px;border-radius:50%;background:var(--gold)}
+
+  .meet-photo{
+    position:relative;
+    border-radius:24px;overflow:hidden;
+    aspect-ratio: 4/5;
+    box-shadow:var(--shadow-lg);
+    background:#eee;
+  }
+  .meet-photo img{width:100%;height:100%;object-fit:cover;object-position:center 16%}
+  .meet-photo .corner{
+    position:absolute;width:140px;height:140px;border:2px solid var(--gold);
+    bottom:-14px;right:-14px;border-radius:24px;z-index:-1;
+  }
+
+  /* ============== 9 — Differentiation 2x2 ============== */
+  .diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
+
+  /* ============== 10 — FAQ ============== */
+  .faq-wrap{max-width:840px;margin:0 auto}
+  .faq-item{border-bottom:1px solid var(--border)}
+  .faq-item:first-child{border-top:1px solid var(--border)}
+  .faq-q{
+    width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;
+    padding:28px 4px;
+    color:var(--navy);font-weight:700;font-size:19px;text-align:left;
+    transition:color .2s ease;
+  }
+  .faq-q:hover{color:var(--gold-deep)}
+  .faq-toggle{
+    flex-shrink:0;width:28px;height:28px;color:var(--gold-deep);
+    display:flex;align-items:center;justify-content:center;
+    transition:transform .3s ease;
+    position:relative;
+  }
+  .faq-toggle::before, .faq-toggle::after{
+    content:"";position:absolute;background:currentColor;border-radius:2px;
+  }
+  .faq-toggle::before{width:18px;height:2px}
+  .faq-toggle::after{width:2px;height:18px;transition:transform .3s ease}
+  .faq-item.open .faq-toggle::after{transform:scaleY(0)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;color:var(--muted);font-size:16.5px;line-height:1.75}
+  .faq-a > div{padding:0 4px 28px;max-width:760px}
+
+  /* ============== 11 — Final CTA ============== */
+  .final{position:relative;overflow:hidden;padding:128px 0;text-align:left}
+  .final::before, .final::after{content:"";position:absolute;border-radius:50%;background:radial-gradient(closest-side, rgba(246,180,62,.18), rgba(246,180,62,0) 70%);pointer-events:none}
+  .final::before{width:560px;height:560px;left:-200px;top:-200px}
+  .final::after{width:520px;height:520px;right:-200px;bottom:-220px}
+  .final-grid{
+    position:relative;z-index:1;
+    display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center;
+  }
+  .final-text{display:flex;flex-direction:column;gap:18px;max-width:580px}
+  .final h2{color:#fff;font-size:clamp(34px, 4.4vw, 52px)}
+  .final p.sub{color:rgba(255,255,255,.78);font-size:18px;line-height:1.6;max-width:520px}
+  .final .small{color:rgba(255,255,255,.6);font-size:13px;display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:6px}
+  .final .small .dot{width:4px;height:4px;border-radius:50%;background:var(--gold)}
+  .coach-card{
+    background:#fff;color:var(--text);
+    border-radius:22px;padding:28px;
+    box-shadow:var(--shadow-lg);
+    display:flex;align-items:center;gap:20px;
+    border:1px solid rgba(255,255,255,.2);
+  }
+  .coach-card .pic{
+    flex-shrink:0;width:84px;height:84px;border-radius:50%;overflow:hidden;
+    border:2px solid var(--gold);
+  }
+  .coach-card .pic img{width:100%;height:100%;object-fit:cover;object-position:center 16%}
+  .coach-card .who .name{font-weight:800;color:var(--navy);font-size:18px}
+  .coach-card .who .role{color:var(--muted);font-size:14px;margin-top:2px}
+  .coach-card .btn{margin-top:14px}
+
+  /* ============== Footer ============== */
+  footer.site{background:var(--navy);color:#fff;padding:88px 0 28px}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1.1fr 1.4fr;gap:48px}
+  .foot h4{color:#fff;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:20px}
+  .foot a, .foot p{color:rgba(255,255,255,.72);font-size:15px;line-height:1.7}
+  .foot a:hover{color:var(--gold)}
+  .foot ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+  .foot-brand{display:flex;flex-direction:column;gap:18px;max-width:340px}
+  .foot-brand img{height:64px;filter:brightness(0) invert(1)}
+  .news{display:flex;flex-direction:column;gap:14px}
+  .news p{color:rgba(255,255,255,.72)}
+  .news form{display:flex;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:6px;}
+  .news input{
+    flex:1;background:transparent;border:none;outline:none;color:#fff;
+    padding:0 14px;font-size:14px;font-family:inherit;
+  }
+  .news input::placeholder{color:rgba(255,255,255,.5)}
+  .news button{
+    background:var(--gold);color:var(--navy);border-radius:999px;
+    height:40px;padding:0 20px;font-weight:700;font-size:13px;
+    transition:background-color .2s ease;
+  }
+  .news button:hover{background:var(--gold-deep)}
+  .foot-divider{
+    margin-top:64px;height:1px;background:linear-gradient(to right, transparent, rgba(246,180,62,.4) 30%, rgba(246,180,62,.4) 70%, transparent);
+  }
+  .foot-bottom{
+    margin-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    font-size:13px;color:rgba(255,255,255,.55);
+  }
+
+  /* ---------- Reveal ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease, transform .55s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1024px){
+    :root{--section-py:96px}
+    .hero-content{padding:64px 48px;grid-template-columns:1fr;gap:24px;min-height:auto}
+    .hero-stage{min-height:auto}
+    .hero-photo{position:relative;height:360px;background-position:center 22%}
+    .hero-stage::before{background:linear-gradient(180deg, rgba(253,250,243,.3) 0%, rgba(253,250,243,.85) 60%, var(--cream) 100%)}
+    .float-card{position:relative;right:auto;bottom:auto;width:auto;max-width:540px;margin-top:8px}
+    .fit-grid, .meet-grid, .steps-wrap, .final-grid{gap:56px}
+    .icon-grid, .testimonial-grid{grid-template-columns:1fr 1fr}
+    .icon-grid > *:nth-child(3), .testimonial-grid > *:nth-child(3){grid-column:1 / -1;max-width:560px;justify-self:center;width:100%}
+    .commit-features{gap:32px}
+  }
+  @media (max-width: 820px){
+    :root{--section-py:80px}
+    .nav-links{display:none}
+    .nav-cta .btn{display:none}
+    .nav-burger{display:flex}
+    .hero{padding:24px 0 56px}
+    .hero-content{padding:40px 28px}
+    .hero-photo{height:300px}
+    .problem-grid{grid-template-columns:1fr;max-width:540px}
+    .fit-grid, .meet-grid, .steps-wrap, .final-grid{grid-template-columns:1fr;gap:40px}
+    .meet-photo{max-width:440px;margin:0 auto}
+    .icon-grid, .testimonial-grid, .diff-grid{grid-template-columns:1fr;gap:16px}
+    .icon-grid > *:nth-child(3), .testimonial-grid > *:nth-child(3){max-width:none}
+    .commit-features{grid-template-columns:1fr;gap:32px}
+    .step-row{grid-template-columns:1fr;gap:8px}
+    .step-row{padding:24px 0}
+    .foot-grid{grid-template-columns:1fr;gap:36px}
+    .final{padding:96px 0}
+    .wrap{padding:0 22px}
+    .meet-name{font-size:64px}
+  }
+  @media (max-width: 420px){
+    body{font-size:16px}
+    .btn{width:100%}
+    .hero-cta{align-items:stretch;width:100%}
+    .reassure{justify-content:center;text-align:center}
+    .hero-content{padding:32px 22px}
+    .float-card{padding:20px}
+    .meet-name{font-size:54px}
+    .coach-card{flex-direction:column;text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site" id="siteHeader">
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Sonny's Speech Studio home">
+      <img src="assets/logo.png" alt="Sonny's Speech Studio" />
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#top" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="/contact" class="btn btn-gold btn-sm">Free Consultation</a>
+      <button class="nav-burger" id="burger" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="top">
+    <a class="logo" href="#top"><img src="assets/logo.png" alt="" style="height:46px"/></a>
+    <button class="nav-burger" id="burgerClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke="currentColor"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+    </button>
+  </div>
+  <nav>
+    <a href="#top">Home</a>
+    <a href="#about">About</a>
+    <a href="/contact">Contact</a>
+  </nav>
+  <a href="/contact" class="btn btn-gold">Book a Free Consultation</a>
+</div>
+
+<main id="top">
+
+<!-- ============== 1 — HERO ============== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-stage">
+      <div class="hero-photo" aria-hidden="true"></div>
+      <div class="hero-content">
+        <div class="hero-text reveal">
+          <span class="eyebrow">1-on-1 Online Coaching</span>
+          <h1>Speak <span class="swoosh">clearly</span> and confidently in meetings and presentations</h1>
+          <p class="sub">1-on-1 coaching for professionals who want structured, practical improvement — not generic advice.</p>
+
+          <div class="trust-line">
+            <span>12+ years experience</span>
+            <span class="dot"></span>
+            <span>1-on-1 coaching</span>
+            <span class="dot"></span>
+            <span>Personalized, structured sessions</span>
+          </div>
+
+          <div class="hero-cta">
+            <a href="/contact" class="btn btn-gold">
+              Book a Free Consultation
+              <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg>
+            </a>
+            <div class="reassure">
+              <span>Starts at $60/session</span>
+              <span class="dot"></span>
+              <span>No pressure</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <aside class="float-card reveal" aria-label="Client testimonial">
+        <div class="qmark">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7H3v6c0 2.2 1.8 4 4 4V14H5V9h2V7zm10 0h-4v6c0 2.2 1.8 4 4 4V14h-2V9h2V7z"/></svg>
+        </div>
+        <blockquote>"Sonny has a clear plan for each session. He guides me step-by-step."</blockquote>
+        <div class="who">
+          <span class="name">Alejandro S.</span>
+          <span class="city">Austin, TX</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 2 — PROBLEM ============== -->
+<section class="bg-cream">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The Friction</span>
+      <h2><span class="swoosh">Does this sound</span> like you?</h2>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card reveal">
+        <div class="check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p>You freeze up or lose your train of thought in meetings</p>
+      </div>
+      <div class="problem-card reveal">
+        <div class="check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p>Your ideas don't come out as clearly as they sound in your head</p>
+      </div>
+      <div class="problem-card reveal">
+        <div class="check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p>You want to sound more confident and prepared when it matters</p>
+      </div>
+      <div class="problem-card reveal">
+        <div class="check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p>You wish your delivery felt steadier in high-stakes presentations</p>
+      </div>
+    </div>
+    <p class="transition-line reveal">This is exactly what coaching is designed to help with.</p>
+  </div>
+</section>
+
+<!-- ============== 3 — AUDIENCE FIT ============== -->
+<section>
+  <div class="wrap">
+    <div class="fit-grid">
+      <div class="fit-text reveal">
+        <span class="eyebrow">Is this you?</span>
+        <h2><span class="swoosh">Coaching is</span> for you if:</h2>
+        <p class="lede">This isn't a generic communication course or a quick-fix package. It's structured, ongoing 1-on-1 coaching for professionals serious about real improvement.</p>
+      </div>
+      <ul class="fit-list reveal">
+        <li class="fit-item">
+          <div class="check">✓</div>
+          <p>You want structured, practical improvement — not theory</p>
+        </li>
+        <li class="fit-item">
+          <div class="check">✓</div>
+          <p>You're open to feedback and willing to apply it between sessions</p>
+        </li>
+        <li class="fit-item">
+          <div class="check">✓</div>
+          <p>You want to improve how you communicate in real work situations</p>
+        </li>
+        <li class="fit-item">
+          <div class="check">✓</div>
+          <p>You're looking for personalized, ongoing 1-on-1 support</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 4 — COMMITMENT (navy 3-up feature row) ============== -->
+<section class="bg-navy commit">
+  <div class="wrap inner">
+    <div class="section-head reveal" style="margin-bottom:0">
+      <span class="eyebrow on-navy">The Outcome</span>
+      <h2><span class="swoosh">You're</span> ready to:</h2>
+    </div>
+    <div class="commit-features reveal">
+      <div class="commit-feat">
+        <div class="ic">
+          <svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke="#f6b43e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 14c0-2 2-4 5-4h10c3 0 5 2 5 4v4c0 2-2 4-5 4h-7l-5 4v-4H11c-3 0-5-2-5-4z"/>
+            <line x1="11" y1="14" x2="21" y2="14" stroke="#fff"/>
+            <line x1="11" y1="18" x2="18" y2="18" stroke="#fff"/>
+          </svg>
+        </div>
+        <h3>Speak more clearly and confidently</h3>
+        <p>In meetings and presentations where being understood matters most.</p>
+      </div>
+      <div class="commit-feat">
+        <div class="ic">
+          <svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke="#f6b43e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="6" y1="9" x2="26" y2="9" stroke="#fff"/>
+            <line x1="6" y1="16" x2="26" y2="16"/>
+            <line x1="6" y1="23" x2="20" y2="23" stroke="#fff"/>
+          </svg>
+        </div>
+        <h3>Communicate ideas with structure</h3>
+        <p>Shape your message so it lands the way it sounds in your head.</p>
+      </div>
+      <div class="commit-feat">
+        <div class="ic">
+          <svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke="#f6b43e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 4 L26 8 V16 C26 22 21 26 16 28 C11 26 6 22 6 16 V8 Z"/>
+            <polyline points="11 16 15 20 22 12" stroke="#fff"/>
+          </svg>
+        </div>
+        <h3>Feel prepared and composed</h3>
+        <p>Walk into important moments steady, ready, and in command.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 5 — HOW COACHING HELPS ============== -->
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The Coaching</span>
+      <h2><span class="swoosh">How coaching</span> helps you improve</h2>
+      <p>Each session is built around the speaking skills that have the biggest impact on your message.</p>
+    </div>
+    <div class="icon-grid">
+      <div class="feature-card reveal">
+        <div class="ic">
+          <svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#0a3e5c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 5h14a3 3 0 0 1 3 3v18a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/>
+            <path d="M9 11h10" stroke="#f6b43e" stroke-width="2"/>
+            <path d="M9 16h12"/>
+            <path d="M9 21h7" stroke="#f6b43e" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3>Organize your message</h3>
+        <p>Build clear, well-structured ideas your audience can follow. Coaching helps you shape your thoughts through better organization, logical flow, and cleaner progression.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="ic">
+          <svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#0a3e5c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="13" y="4" width="6" height="14" rx="3"/>
+            <path d="M9 14a7 7 0 0 0 14 0"/>
+            <line x1="16" y1="21" x2="16" y2="27"/>
+            <line x1="12" y1="27" x2="20" y2="27"/>
+            <path d="M5 11h2 M5 16h2 M25 11h2 M25 16h2" stroke="#f6b43e" stroke-width="1.8"/>
+          </svg>
+        </div>
+        <h3>Strengthen your delivery</h3>
+        <p>Present with stronger presence and pacing. Sessions focus on vocal control, body language, and delivery habits that support clearer, more effective speaking.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="ic">
+          <svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#0a3e5c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 5 L26 9 V17 C26 22 21 26 16 28 C11 26 6 22 6 17 V9 Z"/>
+            <path d="M16 12 V22" stroke="#f6b43e" stroke-width="2"/>
+            <path d="M11 17 L16 22 L21 17" stroke="#f6b43e" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3>Speak with composure</h3>
+        <p>Develop a steadier, more measured delivery that feels polished, prepared, and consistent — even in high-pressure moments.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 6 — HOW IT WORKS ============== -->
+<section class="bg-cream">
+  <div class="wrap">
+    <div class="section-head left reveal" style="margin-bottom:56px;max-width:none">
+      <span class="eyebrow">The Process</span>
+      <h2 style="max-width:680px"><span class="swoosh">How coaching</span> works</h2>
+      <p style="max-width:560px">A simple, low-pressure way to get started.</p>
+    </div>
+    <div class="steps-wrap">
+      <div class="steps-photo reveal">
+        <img src="assets/sonny-no-tie.jpg" alt="Sonny coaching online" />
+        <div class="corner"></div>
+      </div>
+      <div class="steps-list reveal">
+        <div class="step-row">
+          <div class="step-num"><span>STEP 01</span></div>
+          <div class="step-body">
+            <h3>Book a free consultation</h3>
+            <p>Reach out through the contact form. We'll set up a free virtual call to talk through your goals.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num"><span>STEP 02</span></div>
+          <div class="step-body">
+            <h3>Discuss your goals</h3>
+            <p>On the call, we'll talk about what you want to improve and decide if coaching is the right fit. No pressure either way.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num"><span>STEP 03</span></div>
+          <div class="step-body">
+            <h3>Start personalized sessions</h3>
+            <p>Begin weekly or bi-weekly 1-on-1 sessions, each tailored to the speaking situations you're preparing for.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 7 — TESTIMONIALS ============== -->
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">In Their Words</span>
+      <h2><span class="swoosh">What clients</span> are saying</h2>
+    </div>
+    <div class="testimonial-grid">
+      <article class="t-card reveal">
+        <div class="quote-mark">“</div>
+        <blockquote>Sonny has a clear plan for each session. He guides me step-by-step, and I always leave with something specific to work on.</blockquote>
+        <div class="t-attrib">
+          <div class="name">Alejandro S.</div>
+          <div class="city">Austin, TX</div>
+        </div>
+      </article>
+
+      <article class="t-card reveal">
+        <div class="quote-mark">“</div>
+        <blockquote class="placeholder">[Replace with real testimonial — focus on clarity / structure outcome]</blockquote>
+        <div class="t-attrib">
+          <div class="name placeholder">Client Name</div>
+          <div class="city">City, State</div>
+        </div>
+      </article>
+
+      <article class="t-card reveal">
+        <div class="quote-mark">“</div>
+        <blockquote class="placeholder">[Replace with real testimonial — focus on delivery / confidence outcome]</blockquote>
+        <div class="t-attrib">
+          <div class="name placeholder">Client Name</div>
+          <div class="city">City, State</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 8 — MEET SONNY ============== -->
+<section class="meet" id="about">
+  <div class="wrap">
+    <div class="meet-grid">
+      <div class="meet-text reveal">
+        <span class="eyebrow">Meet Your Coach</span>
+        <h2 class="meet-name">Hi, I'm <span class="swoosh">Sonny.</span></h2>
+        <p class="first">I'm the founder of Sonny's Speech Studio. For over 12 years, public speaking has been a consistent part of my life — delivering talks and presentations in a wide variety of settings, including audiences of more than 2,000 people.</p>
+        <p>My approach isn't built on performance tricks or motivational pep talks. It's built on preparation, structure, and deliberate practice — the same approach that helped me grow as a speaker, and the same approach I now use to help working professionals communicate more clearly and confidently in real-world situations.</p>
+        <div class="cred-strip">
+          <span>12+ years speaking experience</span>
+          <span class="dot"></span>
+          <span>Audiences of 2,000+</span>
+          <span class="dot"></span>
+          <span>100% online via Zoom</span>
+        </div>
+      </div>
+      <div class="meet-photo reveal">
+        <img src="assets/sonny-tie.png" alt="Sonny, public speaking coach" />
+        <div class="corner"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 9 — DIFFERENTIATION ============== -->
+<section class="bg-cream">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The Difference</span>
+      <h2><span class="swoosh">What makes</span> this coaching different</h2>
+    </div>
+    <div class="diff-grid">
+      <div class="feature-card reveal">
+        <div class="ic">
+          <svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke="#0a3e5c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="5" width="22" height="22" rx="3"/>
+            <line x1="10" y1="12" x2="22" y2="12" stroke="#f6b43e" stroke-width="2"/>
+            <line x1="10" y1="17" x2="22" y2="17"/>
+            <line x1="10" y1="22" x2="17" y2="22" stroke="#f6b43e" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3>Structured, skill-based</h3>
+        <p>Every session follows a clear plan focused on the specific skills you want to improve.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="ic">
+          <svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke="#0a3e5c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="7" width="24" height="16" rx="2"/>
+            <line x1="11" y1="27" x2="21" y2="27"/>
+            <line x1="16" y1="23" x2="16" y2="27"/>
+            <polyline points="9 17 13 13 17 17 23 11" stroke="#f6b43e" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3>Built for real work situations</h3>
+        <p>Sessions are designed around the meetings, presentations, and conversations you're actually preparing for.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="ic">
+          <svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke="#0a3e5c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="16" cy="12" r="5"/>
+            <path d="M6 27c0-5 4.5-9 10-9s10 4 10 9"/>
+            <circle cx="24" cy="9" r="2.4" fill="#f6b43e" stroke="#f6b43e"/>
+          </svg>
+        </div>
+        <h3>Personalized to your goals</h3>
+        <p>No cookie-cutter curriculum. Every session is shaped around what you specifically need to work on.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="ic">
+          <svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke="#0a3e5c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 5v18l8-4 8 4V5z"/>
+            <polyline points="11 12 15 16 21 9" stroke="#f6b43e" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3>Practical, applicable feedback</h3>
+        <p>You'll leave each session with specific, actionable adjustments you can apply right away.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 10 — FAQ ============== -->
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2><span class="swoosh">Frequently asked</span> questions</h2>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>Who is this coaching for?</span><span class="faq-toggle" aria-hidden="true"></span></button>
+        <div class="faq-a"><div>This coaching is designed for working professionals who want to speak with greater clarity, confidence, and structure. It's especially helpful for presentations, meetings, leadership roles, and other situations where strong speaking matters.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>How does coaching work?</span><span class="faq-toggle" aria-hidden="true"></span></button>
+        <div class="faq-a"><div>Coaching is held online via Zoom in private 45-minute one-on-one sessions. Each session is personalized to your goals and focused on practical improvement through structured exercises, targeted feedback, and real-world application.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>How much do sessions cost?</span><span class="faq-toggle" aria-hidden="true"></span></button>
+        <div class="faq-a"><div>Private coaching starts at $60 per 45-minute one-on-one session. Sessions are typically held once or twice per week. The first step is a free virtual consultation where you can discuss your goals, ask questions, and learn how the coaching works.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>What will I learn through coaching?</span><span class="faq-toggle" aria-hidden="true"></span></button>
+        <div class="faq-a"><div>Coaching strengthens the core skills behind effective speaking — including clarity, structure, delivery, and composure. Clients often improve vocal control, pacing, body language, eye contact, message organization, and other practical tools that support stronger presentations and real-world speaking.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>Is coaching one-time or ongoing?</span><span class="faq-toggle" aria-hidden="true"></span></button>
+        <div class="faq-a"><div>Coaching works best as an ongoing process. While clients are free to take it at their own pace, the biggest improvements come from consistent weekly or bi-weekly sessions over time — not from a single "transformation" package.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>What if I'm not sure if it's the right fit?</span><span class="faq-toggle" aria-hidden="true"></span></button>
+        <div class="faq-a"><div>That's exactly what the free consultation is for. We'll talk through your goals, answer your questions, and decide together whether coaching is a good fit. There's no pressure to commit.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 11 — FINAL CTA ============== -->
+<section class="bg-navy final">
+  <div class="wrap">
+    <div class="final-grid">
+      <div class="final-text reveal">
+        <span class="eyebrow on-navy">Take The First Step</span>
+        <h2>Start improving your speaking with a <span class="swoosh">free consultation</span></h2>
+        <p class="sub">We'll talk through your goals and see if coaching is the right fit. No pressure.</p>
+        <div class="small">
+          <span>Free 1-on-1 virtual consultation</span>
+          <span class="dot"></span>
+          <span>Response within a few hours</span>
+        </div>
+      </div>
+      <div class="coach-card reveal">
+        <div class="pic"><img src="assets/sonny-no-tie.jpg" alt="Sonny" /></div>
+        <div style="display:flex;flex-direction:column;gap:2px;flex:1">
+          <div class="who">
+            <div class="name">Sonny</div>
+            <div class="role">Founder &amp; Speaking Coach</div>
+          </div>
+          <a href="/contact" class="btn btn-gold btn-sm" style="margin-top:14px;align-self:flex-start">
+            Schedule a Call
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site">
+  <div class="wrap foot">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/logo.png" alt="Sonny's Speech Studio"/>
+        <p>Online 1-on-1 Public Speaking &amp; Presentation Coaching for working professionals.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@sonnysspeechstudio.com">hello@sonnysspeechstudio.com</a></li>
+          <li><a href="tel:+10000000000">(000) 000-0000</a></li>
+          <li>Sessions held 100% online via Zoom</li>
+        </ul>
+      </div>
+      <div class="news">
+        <h4>Speaking Tips</h4>
+        <p>Occasional, practical notes on speaking better at work. No spam.</p>
+        <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Subscribed ✓'">
+          <input type="email" placeholder="Your email" aria-label="Email address" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="foot-divider"></div>
+    <div class="foot-bottom">
+      <span>© 2025 Sonny's Speech Studio. All rights reserved.</span>
+      <a href="/privacy">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky-scroll header shadow
+  const header = document.getElementById('siteHeader');
+  const onScroll = () => {
+    if (window.scrollY > 8) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // Mobile menu
+  const menu = document.getElementById('mobileMenu');
+  document.getElementById('burger').addEventListener('click', () => menu.classList.add('open'));
+  document.getElementById('burgerClose').addEventListener('click', () => menu.classList.remove('open'));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(o => {
+        if (o !== item) {
+          o.classList.remove('open');
+          o.querySelector('.faq-a').style.maxHeight = '0px';
+          o.querySelector('.faq-q').setAttribute('aria-expanded','false');
+        }
+      });
+      if (isOpen) {
+        item.classList.remove('open');
+        a.style.maxHeight = '0px';
+        q.setAttribute('aria-expanded','false');
+      } else {
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+        q.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  // Reveal — but reveal anything already in viewport immediately
+  const reveals = document.querySelectorAll('.reveal');
+  const inViewport = (el) => {
+    const r = el.getBoundingClientRect();
+    return r.top < (window.innerHeight || document.documentElement.clientHeight) && r.bottom > 0;
+  };
+  reveals.forEach(el => { if (inViewport(el)) el.classList.add('in'); });
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.08, rootMargin:'0px 0px -40px 0px'});
+  reveals.forEach(el => { if (!el.classList.contains('in')) io.observe(el); });
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in'));
+  }, 800);
+</script>
+
+</body>
+</html>
