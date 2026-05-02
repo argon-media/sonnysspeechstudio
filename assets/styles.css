@@ -106,16 +106,18 @@
      BUTTONS — gold pill, consistent everywhere
      ======================================================== */
   .btn{
-    display:inline-flex;align-items:center;gap:10px;
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
     background:var(--gold);color:var(--navy);
     font-weight:600;font-size:16px;
     padding:0 32px;height:56px;
-    border-radius:999px;
+    border:none;border-radius:999px;
     transition:transform .2s ease, background .2s ease, box-shadow .2s ease;
-    box-shadow:0 6px 18px rgba(246,180,62,.35);
+    box-shadow:0 4px 14px rgba(10,62,92,.14);
     white-space:nowrap;
+    text-decoration:none;
   }
-  .btn:hover{background:var(--gold-deep);transform:scale(1.02);box-shadow:0 10px 24px rgba(246,180,62,.4)}
+  .btn:hover{background:var(--gold-deep);transform:translateY(-1px);box-shadow:0 8px 22px rgba(10,62,92,.18)}
+  .btn:focus-visible{outline:3px solid rgba(10,62,92,.35);outline-offset:3px}
   .btn .arrow{transition:transform .2s ease}
   .btn:hover .arrow{transform:translateX(3px)}
   .btn-ghost{
