@@ -424,7 +424,7 @@
   /* ========================================================
      5 — HOW COACHING HELPS (zigzag)
      ======================================================== */
-  .helps{background:var(--white)}
+  .helps{background:var(--white);padding-bottom:calc(var(--section-py) + 24px)}
   .zig{
     display:grid;grid-template-columns:1fr 1fr;
     gap:80px;align-items:center;
@@ -457,7 +457,12 @@
     background:radial-gradient(circle at 30% 30%, rgba(246,180,62,.12), transparent 55%);
   }
   .zig-visual svg{width:46%;height:46%;position:relative;z-index:1}
-  .helps-cta{display:flex;justify-content:center;margin:56px 0 8px;width:100%}
+  .helps{position:relative;z-index:2}
+  .helps-cta{
+    display:flex;justify-content:center;
+    margin:56px 0 0;width:100%;
+    position:relative;z-index:3;
+  }
   .helps-cta .btn{width:auto;min-width:max-content}
 
   /* ========================================================
