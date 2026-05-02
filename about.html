@@ -166,6 +166,17 @@
   .mid-cta h2{color:#fff;max-width:760px}
   .mid-cta .sub{color:rgba(255,255,255,.78);font-size:18px;max-width:560px}
 
+  /* Light variant of testimonials section so it sits visibly apart from
+     the navy Final CTA that follows it on the About page. */
+  .voices--light{background:var(--cream);color:var(--text)}
+  .voices--light::before{display:none}
+  .voices--light .section-head h2,
+  .voices--light .section-head.on-navy h2{color:var(--text)}
+  .voices--light .eyebrow.on-navy{color:var(--gold-deep)}
+  .voices--light .eyebrow.on-navy::before{color:var(--gold)}
+  .voices--light .v-card{background:#fff;color:var(--text);box-shadow:0 12px 40px rgba(10,62,92,.12)}
+  .voices--light .v-mini{background:#fff}
+
   @media (max-width:1100px){
     .about-hero h1{font-size:54px}
     .journey-left h2{font-size:44px;line-height:50px}
@@ -331,7 +342,7 @@
 </section>
 
 <!-- ================== TESTIMONIALS ================== -->
-<section class="voices full-bleed">
+<section class="voices voices--light full-bleed">
   <div class="wrap">
     <div class="section-head on-navy reveal">
       <span class="eyebrow on-navy">In Their Words</span>
