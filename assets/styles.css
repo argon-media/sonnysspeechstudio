@@ -253,6 +253,17 @@
   .stars-row .label b{font-weight:600}
   .hero-cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:8px}
   .hero-cta .reassure{margin-top:0}
+  .hero-reassure-line{
+    display:flex;align-items:center;gap:10px;
+    margin-top:4px;
+    font-size:14.5px;line-height:1.5;font-weight:400;
+    color:rgba(255,255,255,.9);
+    flex-wrap:wrap;
+  }
+  .hero-reassure-line strong{font-weight:600;color:#fff}
+  .hero-reassure-line .hr-check{
+    flex-shrink:0;color:var(--gold);
+  }
 
   .hero-photo-col{position:relative;display:flex;justify-content:right}
   .hero-photo{
@@ -413,7 +424,7 @@
   /* ========================================================
      5 — HOW COACHING HELPS (zigzag)
      ======================================================== */
-  .helps{background:var(--white);overflow:hidden}
+  .helps{background:var(--white)}
   .zig{
     display:grid;grid-template-columns:1fr 1fr;
     gap:80px;align-items:center;
@@ -446,7 +457,8 @@
     background:radial-gradient(circle at 30% 30%, rgba(246,180,62,.12), transparent 55%);
   }
   .zig-visual svg{width:46%;height:46%;position:relative;z-index:1}
-  .helps-cta{display:flex;justify-content:center;margin-top:32px}
+  .helps-cta{display:flex;justify-content:center;margin:56px 0 8px;width:100%}
+  .helps-cta .btn{width:auto;min-width:max-content}
 
   /* ========================================================
      6 — HOW IT WORKS (photo + timeline)
