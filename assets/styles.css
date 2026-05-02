@@ -267,7 +267,7 @@
 
   .hero-photo-col{position:relative;display:flex;justify-content:right}
   .hero-photo{
-    width:100%;max-width:clamp(280px, calc(150px + 20vh), 440px);aspect-ratio:4/5;
+    width:100%;max-width:clamp(300px, calc(160px + 22vh), 460px);aspect-ratio:3/4;
     border-radius:20px;
     border:2px solid var(--gold);
     box-shadow:0 30px 60px rgba(0,0,0,.35);
