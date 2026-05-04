@@ -400,7 +400,7 @@
   /* ========================================================
      2 — PROBLEM
      ======================================================== */
-  .problem{background:var(--cream)}
+  .problem{background:var(--cream);position:relative;z-index:2;padding-bottom:calc(var(--section-py) + 24px)}
   .problem-grid{
     display:grid;grid-template-columns:repeat(2, 1fr);gap:24px;
     margin-top:8px;
@@ -421,8 +421,10 @@
   .pain h3{font-size:24px;line-height:30px;font-weight:600;margin-bottom:10px}
   .pain p{font-size:16px;color:var(--muted);line-height:1.55}
   .closer{
-    text-align:center;margin-top:56px;
-    font-style:italic;color:var(--muted);font-size:18px;
+    text-align:center;margin:48px 0 0;
+    padding:0 8px 32px;
+    font-style:italic;color:var(--muted);font-size:18px;line-height:1.6;
+    position:relative;z-index:3;
   }
 
   /* ========================================================
@@ -524,7 +526,7 @@
     content:"";position:absolute;inset:0;
     background:radial-gradient(circle at 30% 30%, rgba(246,180,62,.12), transparent 55%);
   }
-  .zig-visual svg{width:46%;height:46%;position:relative;z-index:1}
+  .zig-visual svg{width:54%;height:54%;position:relative;z-index:1}
   .helps{position:relative;z-index:2}
   .helps-cta{
     display:flex;justify-content:center;
@@ -1002,18 +1004,31 @@
      ======================================================== */
   @media (max-width:1100px){
     h2{font-size:50px;line-height:56px}
-    :root{--section-py:80px}
+    :root{--section-py:72px}
     .hero-grid{gap:56px}
     .meet-grid{gap:56px}
     .works-grid{gap:56px}
     .fit-grid{gap:48px}
-    .zig{gap:48px;margin:56px 0}
+    .zig{gap:40px;margin:48px 0}
+    .zig-visual{max-width:240px}
     .diff-grid{grid-template-columns:repeat(2, 1fr)}
     .badge-row{grid-template-columns:repeat(2, 1fr)}
     .v-mini{flex:0 0 calc(50% - 10px)}
     .diff-card:nth-child(2),.diff-card:nth-child(4){margin-top:0}
-    .foot-grid{grid-template-columns:1fr 1fr;gap:36px}
+    .foot-grid{grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+    .foot-brand{grid-column:1 / -1;margin-bottom:8px}
     .logo-row{gap:18px}
+  }
+  /* Tablet-specific adjustments */
+  @media (min-width:768px) and (max-width:1023px){
+    .zig{grid-template-columns:1fr 0.8fr;gap:32px}
+    .zig-visual{max-width:220px}
+    footer{padding:48px 0 20px}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
+    .foot-brand{grid-column:auto;margin-bottom:0}
+    .ready-cols{grid-template-columns:repeat(3, 1fr);gap:24px;margin:56px 0 48px}
+    .ready-col{padding:0 16px;text-align:center;align-items:center}
+    .ready-col .ready-icon{margin-left:auto;margin-right:auto}
   }
   @media (max-width:1023px){
     .nav-links,.nav-cta .header-phone,.nav-cta .btn{display:none}
@@ -1043,10 +1058,11 @@
     .ready-cols{grid-template-columns:1fr;gap:48px;margin:48px 0}
     .ready-col{padding:0}
     .ready-col + .ready-col::before{display:none}
-    .zig{grid-template-columns:1fr;gap:24px;margin:48px 0}
+    .zig{grid-template-columns:1fr;gap:18px;margin:36px 0}
     .zig.flip .zig-text{order:0}
     .zig.flip .zig-visual{order:0}
-    .zig-visual{max-width:280px}
+    .zig-visual{max-width:200px;margin:0;align-self:flex-start}
+    .zig-text{align-items:flex-start}
     .works-grid{grid-template-columns:1fr;gap:48px}
     .voice-grid-2{grid-template-columns:1fr;gap:24px}
     .v-mini{flex:0 0 88%}
@@ -1059,7 +1075,22 @@
     .foot-grid{grid-template-columns:1fr;gap:32px}
     .foot-bottom{flex-direction:column;gap:8px;text-align:center}
     .sonny-card{flex-direction:column;text-align:center;padding:22px}
-    .closer{margin-top:32px;font-size:16px;line-height:1.55;padding:0 8px}
+    .closer{margin:32px 0 0;font-size:16px;line-height:1.6;padding:0 4px 24px;text-align:left}
+    /* Left-align all section heads on mobile to match body content */
+    .section-head{align-items:flex-start;text-align:left;margin:0 0 32px;max-width:100%}
+    .section-head.left{margin:0 0 32px}
+    .section-head.on-navy{align-items:flex-start;text-align:left}
+    .strip-head{text-align:left}
+    .voices-foot{text-align:left}
+    .voices-cta{align-items:flex-start}
+    .helps-cta,.diff-cta,.faq-foot{align-items:flex-start;text-align:left}
+    .ready-cta{align-items:flex-start}
+    .ready-col{align-items:flex-start;text-align:left}
+    .ready-col .ready-icon{margin-left:0;margin-right:0}
+    /* Final CTA: heading left, button can stay where it is */
+    .final .wrap{align-items:flex-start;text-align:left}
+    .final h2{text-align:left}
+    .meet-left{align-items:flex-start;text-align:left}
     .meet-cred .chip{font-size:12px;padding:6px 12px}
     .helps-cta{margin-top:40px}
     .approach-grid{margin-top:24px}
