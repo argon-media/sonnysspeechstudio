@@ -6,8 +6,8 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
-<title>Sonny's Speech Studio — 1-on-1 Online Public Speaking Coaching</title>
-<meta name="description" content="1-on-1 online public speaking coaching for working professionals. Structured, practical sessions over Zoom. Book a free consultation." />
+<title>Online Public Speaking & Presentation Coaching | Sonny's Speech Studio</title>
+<meta name="description" content="1-on-1 online public speaking coaching for working professionals. Build confidence, clarity, and structure. Free 20-minute Zoom consultation." />
 
 <!-- Favicons -->
 <link rel="icon" type="image/png" href="assets/logo.png" />
@@ -92,9 +92,37 @@
       <a href="/contact" class="btn">Book a Free Consultation
         <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navDrawer">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
     </div>
   </div>
 </header>
+
+<!-- Mobile drawer -->
+<div class="nav-overlay" id="navOverlay"></div>
+<aside class="nav-drawer" id="navDrawer" aria-label="Site navigation">
+  <div class="nav-drawer-head">
+    <img src="assets/logo.png" alt="Sonny's Speech Studio" />
+    <button class="nav-drawer-close" id="navDrawerClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <nav class="nav-drawer-links">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </nav>
+  <div class="nav-drawer-divider"></div>
+  <a href="tel:+13373660171" class="nav-drawer-phone">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span>(337) 366-0171</span>
+  </a>
+  <a href="/contact" class="btn">Book a Free Consultation
+    <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </a>
+</aside>
 
 <main>
 
@@ -103,7 +131,7 @@
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-content reveal">
-        <h1>Speak <span class="hl">clearly</span> and confidently in meetings and presentations</h1>
+        <h1>Speak clearly and <span class="hl">confidently</span> in meetings and presentations</h1>
         <p class="sub">1-on-1 coaching for professionals who want structured, practical improvement — not generic advice.</p>
         <div class="hero-trust">
           <span>12+ years public speaking experience</span>
@@ -220,8 +248,8 @@
     <div class="fit-grid">
       <div class="fit-left reveal">
         <span class="eyebrow">Is This You?</span>
-        <h2 style="margin-top:18px">Coaching is for you if:</h2>
-        <p class="lead" style="margin-top:24px">This isn't a generic communication course or a quick-fix package. It's structured, ongoing 1-on-1 coaching for professionals serious about real improvement.</p>
+        <h2 style="margin-top:14px">Coaching is for you if:</h2>
+        <p class="lead" style="margin-top:18px">This isn't a generic communication course or a quick-fix package. It's structured, ongoing 1-on-1 coaching for professionals serious about real improvement.</p>
         <div class="fit-cta">
           <a href="/contact" class="btn">Book a Free Consultation
             <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -268,7 +296,7 @@
           <circle cx="12" cy="12" r="9"/>
           <path d="M8 12l3 3 5-6"/>
         </svg>
-        <h3>Feel prepared and composed</h3>
+        <h3>Be prepared and feel composed</h3>
         <p>Walk into important moments steady, ready, and in command.</p>
       </div>
     </div>
@@ -297,17 +325,21 @@
       </div>
       <div class="zig-visual" aria-hidden="true">
         <svg viewBox="0 0 200 160" fill="none" stroke="#0a3e5c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="36" y="22" width="128" height="116" rx="6" fill="#fdfaf3"/>
-          <circle cx="56" cy="44" r="3" fill="#f6b43e" stroke="#f6b43e"/>
-          <path d="M68 44h70"/>
-          <circle cx="56" cy="62" r="3" fill="#f6b43e" stroke="#f6b43e"/>
-          <path d="M68 62h60"/>
-          <circle cx="68" cy="82" r="2.5" fill="#0a3e5c" stroke="#0a3e5c"/>
-          <path d="M78 82h54"/>
-          <circle cx="68" cy="98" r="2.5" fill="#0a3e5c" stroke="#0a3e5c"/>
-          <path d="M78 98h44"/>
-          <circle cx="56" cy="118" r="3" fill="#f6b43e" stroke="#f6b43e"/>
-          <path d="M68 118h66"/>
+          <!-- Document with structured outline (clear hierarchy) -->
+          <rect x="40" y="20" width="120" height="120" rx="8" fill="#ffffff" stroke="#0a3e5c"/>
+          <!-- Heading bar -->
+          <rect x="54" y="36" width="72" height="10" rx="3" fill="#f6b43e" stroke="#f6b43e"/>
+          <!-- Section 1 -->
+          <rect x="54" y="58" width="6" height="6" rx="1.5" fill="#0a3e5c" stroke="#0a3e5c"/>
+          <path d="M68 61h60"/>
+          <path d="M76 73h44" opacity=".55"/>
+          <!-- Section 2 -->
+          <rect x="54" y="86" width="6" height="6" rx="1.5" fill="#0a3e5c" stroke="#0a3e5c"/>
+          <path d="M68 89h54"/>
+          <path d="M76 101h36" opacity=".55"/>
+          <!-- Section 3 -->
+          <rect x="54" y="114" width="6" height="6" rx="1.5" fill="#0a3e5c" stroke="#0a3e5c"/>
+          <path d="M68 117h60"/>
         </svg>
       </div>
     </div>
@@ -320,14 +352,17 @@
       </div>
       <div class="zig-visual" aria-hidden="true">
         <svg viewBox="0 0 200 160" fill="none" stroke="#0a3e5c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="88" y="32" width="24" height="46" rx="12" fill="#fdfaf3"/>
-          <path d="M76 64a24 24 0 0 0 48 0"/>
-          <path d="M100 88v16"/>
-          <path d="M84 110h32"/>
-          <path d="M40 50q-10 18 0 36" stroke="#f6b43e" stroke-width="2.4"/>
-          <path d="M28 38q-16 26 0 56" stroke="#f6b43e" stroke-width="2.4" opacity=".55"/>
-          <path d="M160 50q10 18 0 36" stroke="#f6b43e" stroke-width="2.4"/>
-          <path d="M172 38q16 26 0 56" stroke="#f6b43e" stroke-width="2.4" opacity=".55"/>
+          <!-- Microphone with sound waves (delivery) -->
+          <rect x="86" y="30" width="28" height="48" rx="14" fill="#f6b43e" stroke="#f6b43e"/>
+          <path d="M70 64a30 30 0 0 0 60 0" stroke="#0a3e5c"/>
+          <path d="M100 94v18" stroke="#0a3e5c"/>
+          <path d="M84 124h32" stroke="#0a3e5c"/>
+          <!-- Sound waves left -->
+          <path d="M48 60q-8 20 0 40" stroke="#f6b43e" stroke-width="2.4"/>
+          <path d="M32 48q-14 32 0 64" stroke="#f6b43e" stroke-width="2.4" opacity=".5"/>
+          <!-- Sound waves right -->
+          <path d="M152 60q8 20 0 40" stroke="#f6b43e" stroke-width="2.4"/>
+          <path d="M168 48q14 32 0 64" stroke="#f6b43e" stroke-width="2.4" opacity=".5"/>
         </svg>
       </div>
     </div>
@@ -340,18 +375,24 @@
       </div>
       <div class="zig-visual" aria-hidden="true">
         <svg viewBox="0 0 200 160" fill="none" stroke="#0a3e5c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="100" cy="38" r="12" fill="#fdfaf3"/>
-          <path d="M82 78c0-12 8-22 18-22s18 10 18 22"/>
-          <rect x="60" y="78" width="80" height="42" rx="4" fill="#f6b43e" stroke="#f6b43e"/>
-          <path d="M50 120h100"/>
-          <circle cx="42" cy="98" r="6"/>
-          <path d="M30 116c0-6 6-10 12-10s12 4 12 10"/>
-          <circle cx="158" cy="98" r="6"/>
-          <path d="M146 116c0-6 6-10 12-10s12 4 12 10"/>
-          <circle cx="76" cy="104" r="5"/>
-          <path d="M66 122c0-5 4-9 10-9s10 4 10 9"/>
-          <circle cx="124" cy="104" r="5"/>
-          <path d="M114 122c0-5 4-9 10-9s10 4 10 9"/>
+          <!-- Speaker at podium with audience (presenting / composure) -->
+          <!-- Speaker -->
+          <circle cx="100" cy="34" r="11" fill="#ffffff"/>
+          <path d="M86 70c0-10 6-18 14-18s14 8 14 18"/>
+          <!-- Podium -->
+          <rect x="74" y="70" width="52" height="36" rx="3" fill="#f6b43e" stroke="#f6b43e"/>
+          <line x1="100" y1="70" x2="100" y2="106" stroke="#0a3e5c" opacity=".4"/>
+          <!-- Stage line -->
+          <path d="M44 116h112" stroke-width="1.8"/>
+          <!-- Audience row 1 (closer) -->
+          <circle cx="58" cy="128" r="5"/>
+          <path d="M50 142c0-5 4-8 8-8s8 3 8 8"/>
+          <circle cx="80" cy="128" r="5"/>
+          <path d="M72 142c0-5 4-8 8-8s8 3 8 8"/>
+          <circle cx="120" cy="128" r="5"/>
+          <path d="M112 142c0-5 4-8 8-8s8 3 8 8"/>
+          <circle cx="142" cy="128" r="5"/>
+          <path d="M134 142c0-5 4-8 8-8s8 3 8 8"/>
         </svg>
       </div>
     </div>
@@ -400,7 +441,7 @@
             <div class="step-body">
               <span class="step-num">Step 03</span>
               <h3>Start personalized sessions</h3>
-              <p>Begin weekly or bi-weekly 1-on-1 sessions, each tailored to the speaking situations you're preparing for.</p>
+              <p>Begin once or twice per week 1-on-1 sessions, each tailored to the speaking situations you're preparing for.</p>
             </div>
           </div>
         </div>
@@ -516,7 +557,7 @@
         <p>My approach is simple: structured, practical sessions that focus on the situations you're actually preparing for. Every session has a clear plan, real-time feedback, and concrete adjustments you can apply right away.</p>
         <div class="meet-cred">
           <span class="chip">12+ years public speaking experience</span>
-          <span class="chip">Audiences of 2,000+</span>
+          <span class="chip">Small groups to audiences of 2,000+</span>
           <span class="chip">Online via Zoom</span>
           <span class="chip">Tailored 1-on-1 sessions</span>
         </div>
@@ -612,7 +653,7 @@
         <summary>How does coaching work?
           <svg class="pm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
         </summary>
-        <p class="ans">Sessions run 45 minutes via Zoom, weekly or bi-weekly. Each session has a clear plan focused on the speaking situation you're preparing for, with live practice, real-time feedback, and specific adjustments to apply between sessions.</p>
+        <p class="ans">Sessions run 45 minutes via Zoom, once or twice per week. Each session has a clear plan focused on the speaking situation you're preparing for, with live practice, real-time feedback, and specific adjustments to apply between sessions.</p>
       </details>
       <details class="qa">
         <summary>How much do sessions cost?
@@ -636,7 +677,7 @@
         <summary>Is coaching one-time or ongoing?
           <svg class="pm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
         </summary>
-        <p class="ans">Most clients work together ongoing — weekly or bi-weekly — because real improvement compounds with consistent practice and feedback. There's no long-term contract; you continue session-by-session as long as it's working for you.</p>
+        <p class="ans">Most clients work together ongoing — once or twice per week — because real improvement compounds with consistent practice and feedback. There's no long-term contract; you continue session-by-session as long as it's working for you.</p>
       </details>
       <details class="qa">
         <summary>What if I'm not sure if it's the right fit?

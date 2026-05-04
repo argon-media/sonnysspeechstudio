@@ -26,16 +26,44 @@
   reveals.forEach(el => { if (!el.classList.contains('in')) io.observe(el); });
 })();
 
-// Active nav link
+// Active nav link (header + mobile drawer)
 (function(){
   const path = window.location.pathname.replace(/\/$/, '');
-  const links = document.querySelectorAll('.nav-links a');
+  const links = document.querySelectorAll('.nav-links a, .nav-drawer-links a');
   links.forEach(a => {
     const href = a.getAttribute('href').replace(/\/$/, '');
     if (href === path || (href === '/' && (path === '' || path === '/index.html'))) {
       a.classList.add('active');
     }
   });
+})();
+
+// Mobile drawer
+(function(){
+  const toggle = document.getElementById('navToggle');
+  const drawer = document.getElementById('navDrawer');
+  const overlay = document.getElementById('navOverlay');
+  const closeBtn = document.getElementById('navDrawerClose');
+  if (!toggle || !drawer) return;
+  const open = () => {
+    document.body.classList.add('nav-open');
+    drawer.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'Close menu');
+  };
+  const close = () => {
+    document.body.classList.remove('nav-open');
+    drawer.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open menu');
+  };
+  toggle.addEventListener('click', () => {
+    document.body.classList.contains('nav-open') ? close() : open();
+  });
+  if (closeBtn) closeBtn.addEventListener('click', close);
+  if (overlay) overlay.addEventListener('click', close);
+  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+  window.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
 })();
 
 // Testimonial mini carousel
